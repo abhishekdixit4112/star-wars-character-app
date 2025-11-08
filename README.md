@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Star Wars Character Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a single-page app (SPA) built with **React** and styled using **Tailwind CSS**. It grabs Star Wars character data from the official SWAPI, shows it clearly, and makes it easy to find who you're looking for.
 
-## Available Scripts
+## Getting Started: How to Run It
 
-In the project directory, you can run:
+Follow these steps to get the app running on your computer:
 
-### `npm start`
+### What you need:
+* Node.js
+* npm or yarn
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1.  **Get the code:** Clone this repository and move into the project folder.
+    ```bash
+    git clone [YOUR_REPOSITORY_LINK]
+    cd star-wars-character-explorer
+    ```
 
-### `npm test`
+2.  **Install everything:**
+    ```bash
+    npm install
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3.  **Start the app:**
+    ```bash
+    npm start
+    ```
 
-### `npm run build`
+The app will open automatically at `http://localhost:3000`. You'll need to use the mock login.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What's Included: Features & Extras
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Core Features
+* **Pagination:** You can flip through pages of characters (10 per page).
+* **Character Details:** Clicking any card opens a modal to show extra stats and details about their homeworld.
+* **Error Handling:** Clear messages show up if the data fails to load.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Bonus Features
+* **Global Search:** Searching checks the *entire* SWAPI database, not just the characters currently loaded on your page.
+* **Homeworld Filter:** You can instantly filter the list by the character's home planet.
+* **Mock Login:** The app requires a login to see the content.
+    * **Username:** `star`
+    * **Password:** `coder`
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Design Choices: Why I Built It This Way 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Small Components:** I broke down complex parts (like the Search/Filter bar and the Homeworld details) into tiny, focused components. This keeps the main pages clean and makes the code reusable.
+* **React Hooks:** All the complicated tasks—like fetching data, managing the search, and handling the login status—are separated into custom hooks. This keeps the data logic away from the display code.
+* **No Redux:** Standard React state management was enough for this size of project, avoiding unnecessary complexity.
